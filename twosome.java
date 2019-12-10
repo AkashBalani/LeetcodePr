@@ -3,14 +3,13 @@
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int len = nums.length;
-        for(int i = 0; i <= len; i++){
-            for(int j = i; j <= len; j++){
-                if(nums[i] + nums[j] == target){
-                    return new int[] = {i, j};
+        for(int i = 0; i <= nums.length; i++){
+            for(int j = i + 1; j <= nums.length; j++){
+                if(nums[j] == target - nums[i]){
+                    return new int[] {i, j};
                 }
             }
         }
-        return null;
+        throw new IllegalArgumentException("No two sum solution");
     }
 }

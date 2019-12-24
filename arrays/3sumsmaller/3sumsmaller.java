@@ -1,19 +1,26 @@
-// Initial Submission
-// Brute Force
+// Accepted Solution
 
-class Solution {
+public class Solution {
+    int count;
+    
     public int threeSumSmaller(int[] nums, int target) {
-        // based on 2 pointers
-        int result = 0;
-        for(int i = 0; i <= nums.length-1; i++){
-            for(int j = i+1; j <= nums.length-1; j++){
-                for(int k = j+1; k <= nums.length-1; k++){
-                    if((nums[i] + nums[j] + nums[k]) < target){
-                        result++;
-                    }
+        count = 0;
+        Arrays.sort(nums);
+        int len = nums.length;
+    
+        for(int i=0; i<len-2; i++) {
+            int left = i+1, right = len-1;
+            while(left < right) {
+                if(nums[i] + nums[left] + nums[right] < target) {
+                    count += right-left;
+                    System.out.println(count);
+                    left++;
+                } else {
+                    right--;
                 }
-            }    
+            }
         }
-        return result;
+        
+        return count;
     }
 }

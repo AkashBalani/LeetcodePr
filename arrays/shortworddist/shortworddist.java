@@ -1,20 +1,20 @@
-// Initial Attempt //
-// Passed for few test cases //
+// Accepted Solution //
+// Brute Force //
 
-class Solution {
+public class Solution {
     public int shortestDistance(String[] words, String word1, String word2) {
-        int alpha = -1;
-        int beta = 0;
+        Integer alpha = null, beta = null;
+        int result = Integer.MAX_VALUE;
         for(int i = 0; i < words.length; i++){
             if(words[i].equals(word1)){
                 alpha = i;
+                if(beta != null) result = Math.min(result, Math.abs(alpha - beta));
             }
             if(words[i].equals(word2)){
                 beta = i;
-                if(alpha != -1)
-                    return Math.abs(alpha - beta);
+                if(alpha != null) result = Math.min(result, Math.abs(alpha - beta));
             }
         }
-        return Math.abs(alpha - beta);
+        return result;
     }
 }

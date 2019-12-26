@@ -1,4 +1,5 @@
 // Accepted Solution
+// So this solution works for sorted arrays.
 
 class Solution {
     public int removeDuplicates(int[] nums) {

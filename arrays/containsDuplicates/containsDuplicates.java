@@ -1,15 +1,14 @@
-// Initial Code
-// Time Limit Exceeded
+// Brute Force
+// Accepted Answer somehow?
+// Space --> O(1) and Time --> O(n*n)
 
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        ArrayList<Integer> arrli = new ArrayList<Integer>();
-        for(int i = 0; i < nums.length; i++){
-            if(arrli.contains(nums[i])){
-                return true;
-            }
-            else{
-                arrli.add(nums[i]);
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = i + 1; j < nums.length; j++) {
+                if(nums[i] == nums[j]) {
+                    return true;
+                }
             }
         }
         return false;

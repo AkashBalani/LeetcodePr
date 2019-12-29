@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-// Initial Solution
-// Passed some testcases
+// Improved Solution
+// Passed all testcases
 
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
@@ -23,5 +23,6 @@ class Solution {
         for(int i = 0; i < result.size(); i++){
             r[i] = result.get(i);
         }
+        return r;
     }
 }

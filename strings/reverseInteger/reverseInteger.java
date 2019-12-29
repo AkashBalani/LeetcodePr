@@ -1,3 +1,5 @@
+
+// Initial Brute Force
 // Accepted Answer
 
 class Solution {
@@ -44,5 +46,26 @@ class Solution {
                 return 0;
             return betterGuess;
         }
+    }
+}
+
+// Advanced Solution
+
+class Solution {
+    public int reverse(int x)
+    {
+        int result = 0;
+
+        while (x != 0)
+        {
+            int tail = x % 10;
+            int newResult = result * 10 + tail;
+            if ((newResult - tail) / 10 != result) // This line only checks if result * 10 leads to overflow
+            { return 0; }
+            result = newResult;
+            x = x / 10;
+        }
+
+        return result;
     }
 }

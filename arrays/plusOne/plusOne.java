@@ -4,17 +4,17 @@
 
 class Solution {
     public int[] plusOne(int[] digits) {
-        long result = 0;
-        for(int i = 0; i < digits.length; i++){
-               result += digits[i] * Math.pow(10, (digits.length-1)-i);
+        int n = digits.length;
+        for(int i = n-1; i >= 0; i--){
+            if(digits[i] < 9){
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
         }
-        result += 1;
-        String temp = Long.toString(result);
-        int[] newGuess = new int[temp.length()];
-        for (int i = 0; i < temp.length(); i++)
-        {
-            newGuess[i] = temp.charAt(i) - '0';
-        }
-        return newGuess;
+        int[] result = new int[n+1];
+        result[0] = 1;
+
+        return result;
     }
 }

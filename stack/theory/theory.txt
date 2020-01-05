@@ -1,0 +1,2 @@
+1. Java Collection framework has a Stack class to implement the namesake data structure.
+2. This class consist of 5 operations --> push, pop, empty, search and peek. 

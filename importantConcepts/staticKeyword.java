@@ -95,6 +95,41 @@ class Test3{
     public static void main(String[] args){
       // main method
     }
-    
+
+  }
+}
+
+// So when is the correct time to use static variables and methods?
+// We use static varible for the property that is common across all objects in a classes
+// For example the College name for the Student class.
+class Student{
+  String name;
+  int rollNo;
+
+  static String cllgName;
+
+  static int counter = 0;
+
+  public Student(String name){
+    this.name = name;
+    this.rollNo = setRollNo();
+  }
+
+  static int setRollNo(){
+    counter++;
+    return counter;
+  }
+
+  static void setCllg(String name){
+    cllgName = name;
+  }
+
+  // This is a normal instance method --> No static stuff here!
+  void getStudentInfo(){
+    System.out.println("name: " + this.name);
+    System.out.println("rollNo: " + this.rollNo);
+
+    // We are fetch
+    System.out.println("College Name: " + cllgName);
   }
 }

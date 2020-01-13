@@ -67,3 +67,34 @@ class Test2{
 // 2. Inside static block
 // 3. Value of a: 20
 // 4. Inside main
+
+/////////// STATIC METHODS ////////////
+// Important points about static methods
+// 1. Static methods can only (directly) call other static methods
+// 2. They can only (directly) access static data.
+// 3. they cannot refer to 'this' or 'super' in any way!
+
+class Test3{
+  static int a = 10;
+  int b = 20;
+
+  static void m1(){
+    a = 20;
+    System.out.println("from m1");
+
+    b = 10; // This would result in an error, Can't make a static reference to a non-static member
+
+    m2(); // This would again result in error, can't make a static reference to a non-static source.
+
+    System.out.println(super.a); // Again can't use super in static context
+
+    void m2(){
+      System.out.println("from m2");
+    }
+
+    public static void main(String[] args){
+      // main method
+    }
+    
+  }
+}

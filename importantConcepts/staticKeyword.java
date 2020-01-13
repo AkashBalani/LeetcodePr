@@ -35,3 +35,35 @@ class Test1{
 }
 // Right here we understand that a will forever be 10 util it is destroyed.
 // While b will always compute (a * 4), as a is 10, b will always be 40.
+
+//////////// STATIC VARIABLES //////////
+// When a variable is declared as static, then a single copy of variable is created,
+// and shared among all objects at Class level.
+// You can think of static variables as Global variables
+// IMPORTANT nOTE --> We can create static variables only at class-level
+// and static variables are executed in order they are present in a program.
+
+class Test2{
+  // Static variable
+  static int a = m1();
+
+  static{
+    System.out.println("Inside static block");
+  }
+
+  static int m1(){
+    System.out.println("from m1");
+    return 20;
+  }
+
+  public static void main(String[] args){
+    System.out.println("Value of a: " + a);
+    System.out.println("from main");
+  }
+}
+
+// Output of this sequence is
+// 1. from m1
+// 2. Inside static block
+// 3. Value of a: 20
+// 4. Inside main

@@ -46,3 +46,21 @@ public class Solution {
         return maxprofit;
     }
 }
+
+// Accepted Solution
+// One pass Solution
+// This solution works on the basis of calculating the highest peak and lowest crest
+
+public class Solution {
+    public int maxProfit(int prices[]) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
+        }
+        return maxprofit;
+    }
+}

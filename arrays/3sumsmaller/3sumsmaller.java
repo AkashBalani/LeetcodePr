@@ -22,7 +22,8 @@ public class Solution {
                 if(nums[i] + nums[left] + nums[right] < target) {
                     count += right-left;
                     // This line is the main reason this code is so small, we are essentially saying that if we have found such a condition where i, left and right added up are less than target than any elements in between would also satisfy this condition as the array is sorted             
-                    System.out.println(count);
+                    // BTW the above line fails in 3Sum, for obvious reasons
+	            System.out.println(count);
                     left++;
                 } else {
                     right--;

@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 // Given an array of integers find if it contains any duplicates
 
 // INPUT: [1,2,3,1]
@@ -19,7 +23,7 @@ class Solution {
 }
 
 // Accepted easier solution
-class Solution {
+class Solution1 {
     public boolean containsDuplicate(int[] nums) {
     Set<Integer> set = new HashSet<>(nums.length);
     for (int x: nums) {
@@ -27,5 +31,17 @@ class Solution {
         set.add(x);
         }
     return false;
+    }
+}
+
+// Accepted Solution
+// Not as elegant as the ones before it
+class Solution2 {
+    public boolean containsDuplicate(int[] nums){
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length - 1; i++){
+            if(nums[i]  == nums[i+1]) return true;
+        }
+        return false;
     }
 }

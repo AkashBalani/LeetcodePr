@@ -1,7 +1,7 @@
 
 // Accepted Solution
 class Solution{
-    public int hammingDistance(int n){
+    public int hammingWeight(int n){
         int bits = 0, mask = 1;
         for(int i = 0; i < 32; i++){
             if((n & mask) != 0)
@@ -9,5 +9,17 @@ class Solution{
             mask <<= 1;
         }
         return bits;
+    }
+}
+
+//Accepted Solution
+class Solution1{
+    public int hammingWeight(int n){
+        int sum = 0;
+        while( n!= 0){
+            sum++;
+            n &= (n-1);
+        }
+        return sum;
     }
 }

@@ -2,7 +2,8 @@
 
 // This won't work if the node the tail
 
-public class ListNode {
+
+class ListNode {
 	int val;
 	ListNode next;
 	ListNode(int x) { val = x; }

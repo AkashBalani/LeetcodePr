@@ -1,4 +1,13 @@
 // Accpeted Solution
+class ListNode{
+    int val;
+    ListNode next;
+    ListNode(int x){
+        val = x;
+    }
+	public ListNode() {
+	}
+}
 
 class Solution{
 	public ListNode removeNthFromEnd(ListNode head, int n){

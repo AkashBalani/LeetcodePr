@@ -13,3 +13,17 @@ class Solution{
         return maxSum;
     }
 }
+
+// Accepted Solution
+// Reduces the unnecessary outer loop
+class Solution1{
+    public int maxSubarray(int[] nums){
+        int n = nums.length;
+        int currSum = nums[0], maxSum = nums[0];
+        for(int i = 1; i < n; i++){
+            currSum = Math.max(nums[i], currSum + nums[i]);
+            maxSum = Math.max(currSum, maxSum);  
+        }
+        return maxSum;
+    }
+}

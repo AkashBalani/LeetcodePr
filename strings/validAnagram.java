@@ -4,7 +4,8 @@ import java.util.HashMap;
 // Accepted Solution
 class Solution1 {
     public boolean isValidAnagram(String s, String t){
-        if(t.length() < s.length()) return isValidAnagram(t, s);
+        // if(t.length() < s.length()) return isValidAnagram(t, s);
+        if(s.length() != t.length()) return false; // I can't believe I didn't spot this thing
         Map<Character, Integer> map = new HashMap<>();
         
         for(int i = 0; i < s.length(); i++){

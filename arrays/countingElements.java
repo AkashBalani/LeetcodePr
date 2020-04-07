@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 // Accepted Solution
 
@@ -20,5 +22,20 @@ class Solution2 {
             }
         }
         return totalCount;
+    }
+}
+
+// Accepted Solution
+class Solution3{
+    public int countElements(int arr[]){
+        Set<Integer> set = new HashSet<>();
+        for(int x : arr){
+            set.add(x);
+        }
+        int count = 0;
+        for(int x : arr){
+            if(set.contains(x + 1)) count += 1;
+        }
+        return count;
     }
 }

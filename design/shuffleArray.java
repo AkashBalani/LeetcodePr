@@ -49,7 +49,7 @@ class Solution1{
 
     private Random rand = new Random();
 
-    public Solution(int[] nums){
+    Solution1(int[] nums) {
         array = nums;
         original = nums.clone();
     }

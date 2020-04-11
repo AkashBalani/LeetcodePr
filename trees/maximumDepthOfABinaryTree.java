@@ -1,19 +1,17 @@
 import java.util.LinkedList;
 
-import javax.swing.tree.TreeNode;
-
 // Accepted Solution
 // Uses DFS approach
 
-// public class TreeNode{
-//     int val;
-//     TreeNode left;
-//     TreeNode right;
-//     TreeNode(int x){
-//         val = x;
-//     }
-// }
 class Solution{
+    public class TreeNode{
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x){
+        val = x;
+    }
+}
     public int maxDepth(TreeNode root){
         if(root == null){
             return 0;
@@ -27,6 +25,14 @@ class Solution{
 // Accepted Solution
 // DFS + Iterative
 class Solution1{
+    public class TreeNode{
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x){
+            val = x;
+        }
+    }
     public int maxDepth(TreeNode root){
         if(root == null){
             return 0;

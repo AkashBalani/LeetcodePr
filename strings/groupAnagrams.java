@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 // Two strings are anagrams iff their sorted strings are equal
 // Accepted Solution
 

@@ -18,3 +18,21 @@ class Solution{
         return true;
     }
 }
+
+// Last solution was failing because of the slope calculation
+class Solution1{
+    public boolean checkIfStraight(int[][] coordinates){
+        int x = coordinates[0][0];
+        int y = coordinates[0][1];
+        int x1 = coordinates[1][0];
+        int y1 = coordinates[1][1];
+        int dx = (x1 - x);
+        int dy = (y1 - y);
+        for(int[] co : coordinates){
+            int xa = co[0];
+            int ya = co[1];
+            if((dx * (ya - y1)) != (dy * (xa - x1))) return false;
+        }
+        return true;
+    }
+}

@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class StockSpanner {
     Map<Integer, Integer> map;
     public StockSpanner() {
@@ -20,6 +22,25 @@ class StockSpanner {
             map.put(price, current);
             return current;
         }
+    }
+}
+
+class StockSpanner1{
+    Stack <Integer> prices, weights;
+    public StockSpanner1(){
+        prices = new Stack<>();
+        weights = new Stack<>();
+    }
+
+    public int next(int price){
+        int current = 1;
+        while(!prices.isEmpty() && prices.peek() <= price){
+            prices.pop();
+            current += weights.pop();
+        }
+        prices.push(price);
+        weights.push(current);
+        return current;
     }
 }
 

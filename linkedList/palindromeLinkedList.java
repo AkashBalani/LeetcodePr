@@ -20,3 +20,20 @@ class Solution{
         return true;
     }
 }
+
+// Advanced Solution
+class Solution1{
+    ListNode front;
+    public boolean isPalindrome(ListNode head){
+        front = head;
+        return recursively(front);
+    }
+    public boolean recursively(ListNode current){
+        if(current != null){
+            if(!recursively(current.next)) return false;
+            if(current.val != front.val) return false;
+            current = current.next;
+        }
+        return true;
+    }
+}

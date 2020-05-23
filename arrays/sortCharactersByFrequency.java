@@ -51,3 +51,36 @@ class Solution1{
         return result.toString();
     }
 }
+
+class Solution2{
+    public String frequencyString(String s){
+        if(s == null || s.isEmpty()) return s;
+
+        Map<Character, Integer> map = new HashMap<>();
+        for(char c : s.toCharArray()){
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        int maxF = Collections.max(map.values());
+
+        List<List<Character>> buckets = new ArrayList<>();
+        for(int i = 0; i <= maxF; i++){
+            buckets.add(new ArrayList<Character>());
+        }
+
+        for(Character key : map.keySet()){
+            int freq = map.get(key);
+            buckets.get(freq).add(key);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i = buckets.size() - 1; i >= 0; i--){
+            for(Chracter c : buckets.get(i)){
+                for(int j = 0; j < i; j++){
+                    sb.append(c);
+                }
+            }
+        }
+        return sb.toString();
+    }
+}

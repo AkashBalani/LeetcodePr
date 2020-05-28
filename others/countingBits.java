@@ -36,7 +36,17 @@ class Solution2{
     public int countingBits(int num){
         int[] ans = new int[num + 1];
         for(int i = 1; i <= num; ++i){
-            ans[i] = ans[i>>1] + (i & 1);
+            ans[i] = ans[i>>1] + (i & 1); // x / 2 is x >> 1 and x % 2 is x & 1
+        }
+        return ans;
+    }
+}
+
+class Solution3{
+    public int countingBits(int num){
+        int[] ans = new int[num + 1];
+        for(int i = 1; i <= num; ++i){
+            ans[i] = ans[i & (i - 1)] + 1;
         }
         return ans;
     }

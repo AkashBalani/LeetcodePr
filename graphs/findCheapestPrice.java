@@ -4,8 +4,11 @@ class Solution{
         for (int[] f : flights) {
             if (!prices.containsKey(f[0])) prices.put(f[0], new HashMap<>());
             prices.get(f[0]).put(f[1], f[2]);
+            // So we are putting source as the key,
+            // and values is another hashMap with key as destination and value as price
         }
         Queue<int[]> pq = new PriorityQueue<>((a, b) -> (Integer.compare(a[0], b[0])));
+        // this is a comparator which would compare in ascending order
         pq.add(new int[] {0, src, k + 1});
         while (!pq.isEmpty()) {
             int[] top = pq.remove();

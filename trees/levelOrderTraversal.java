@@ -1,15 +1,12 @@
 import java.util.ArrayList;
 
-import javax.swing.tree.TreeNode;
-
-import sun.misc.Queue;
 
 public class Solution {
     List<List<Integer>> levels = new ArrayList<List<Integer>>();
 
-    public void helper(ListNode node, int level){
+    public void helper(TreeNode node, int level){
         if(levels.size() == level)
-            levels.add(new ArrayList<>);
+            levels.add(new ArrayList<Integer>());
 
         levels.get(level).add(node.val);
 
@@ -21,7 +18,7 @@ public class Solution {
     }
 
     public List<List<Integer>> levelOrderTraversal(TreeNode root){
-        if(root == null) return 0;
+        if(root == null) return levels;
         helper(root, 0);
         return levels;
     } 

@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 // Accepted Solution
 @SuppressWarnings("unchecked")
@@ -27,6 +29,25 @@ class Solution{
 
                 if(rows[i].get(n) > 1 || cols[j].get(n) > 1 || boxs[box_index].get(n) > 1)
                     return false;
+            }
+        }
+        return true;
+    }
+}
+
+class Solution1{
+    public boolean isValidSudoku(char[][] board){
+        Set<E> seen = new HashSet<>();
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                char number = board[i][j];
+                if(number != '.'){
+                    if(!seen.add(number + " in row " + i) ||
+                    !seen.add(number + " in column " + j) ||
+                    !seen.add(number + " in block " + i/3 + "-" + j/3)
+                    )
+                        return false;
+                }
             }
         }
         return true;

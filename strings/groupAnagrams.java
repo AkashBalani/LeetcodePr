@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// Two strings are anagrams iff their sorted strings are equal
+// Two strings are anagrams if and only if their sorted strings are equal
 // Accepted Solution
 
 class Solution{

@@ -14,3 +14,10 @@ class Solution {
         return 0;
     }
 }
+
+class Solution1 {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
+}

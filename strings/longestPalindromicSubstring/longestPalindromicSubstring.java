@@ -13,8 +13,6 @@ class Solution {
         if (len > end - start) {
             start = i - (len - 1) / 2;
             end = i + len / 2;
-            // System.out.println("Start : " + start);
-            // System.out.println("End : " + end);
         }
     }
     return s.substring(start, end + 1);
@@ -25,8 +23,6 @@ private int expandAroundCenter(String s, int left, int right) {
     while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
         L--;
         R++;
-        // System.out.println("L : " + L);
-        // System.out.println("R : " + R);
     }
     return R - L - 1;
 }

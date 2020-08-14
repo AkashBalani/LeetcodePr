@@ -1,28 +1,35 @@
-import java.util.ArrayList;
-import java.util.List;
-
-class Solution2{
-    List<Integer> list;
-    public Solution2(){
-         list = new ArrayList<>();
-    }
-    public void push(int x){
-        list.add(x);
-    }
-    public void pop(){
-        int index = list.size() - 1;
-        list.remove(index);
-    }
-    public int top(){
-        int index = list.size() - 1;
-        return list.get(index);
-    }
-    public int getMin(){
-        int index = list.size() - 1;
-        int min = Integer.MAX_VALUE;
-        for(int i = 0; i < index; i++){
-            if(list.get(i) < min) min = list.get(i);
+class MinStack {
+    
+    private Stack<int[]> stack = new Stack<>();
+    
+    public MinStack() { }
+    
+    
+    public void push(int x) {
+        
+        /* If the stack is empty, then the min value
+         * must just be the first value we add. */
+        if (stack.isEmpty()) {
+            stack.push(new int[]{x, x});
+            return;
         }
-        return min;
-    }    
+        
+        int currentMin = stack.peek()[1];
+        stack.push(new int[]{x, Math.min(x, currentMin)});
+    }
+    
+    
+    public void pop() {
+        stack.pop();
+    }
+    
+    
+    public int top() {
+        return stack.peek()[0];
+    }
+    
+    
+    public int getMin() {
+        return stack.peek()[1];
+    }
 }

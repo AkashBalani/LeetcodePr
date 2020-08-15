@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import javax.swing.tree.TreeNode;
-
 class Solution{
     public int kthSmallest(TreeNode root, int k){
         ArrayList<Integer> num = inorder(root, new ArrayList<Integer>());

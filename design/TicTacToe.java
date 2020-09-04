@@ -45,3 +45,48 @@ public class TicTacToe {
         return 0;
         }
     }
+
+// TicTacToe tick = new TicTacToe(3);
+//   rows = new int[3];
+//   cols = new int[3];
+// tick.move(0, 0, 1)
+//   toAdd = 1
+//   rows[0] = 0 + 1
+//   cols[0] = 0 + 1
+//   if(0 == 0)
+//     diagonal = 0 + 1
+//   if(0 == 3 - 0 - 1) (F)
+//   size = 3
+//   if(1 == 3 || 1 == 3 || 1 == 3 || 0 == 3) (F)
+//   return 0
+// tick.move(0, 2, 2)
+//   toAdd = -1
+//   rows[0] = 1 - 1 = 0
+//   cols[2] = 0 - 1 = -1
+//   if(0 == 2) (F)
+//   if(2 == 3 - 0 - 1)
+//     antiDiagonal = -1
+//   int size = 3
+//   if(0 == 3 || 1 == 3 || 1 == 3 || 1 == 3) (F)
+//   return 0
+// tick.move(2, 2, 1)
+//   toAdd = 1
+//   rows[2] = 0 + 1 = 1
+//   cols[2] = -1 + 1 = 0
+//   if(2 == 2)
+//     diagonal = 2
+//   if(2 == 3 - 2 - 1) (F)
+//   size = 3
+//   if(1 == 3 || 0 == 3 || 2 == 3 || 1 == 3) (F)
+//   return 0
+// tick.move(1, 1, 2)
+//   toAdd = -1
+//   rows[1] = 0 - 1 = -1
+//   cols[1] = 0 - 1 = -1
+//   if(1 == 1)
+//     diagonal = 2 - 1 = 1
+//   if(1 == 3 - 1 - 1)
+//     antidiagonal = -1 -1 = -2
+//   size = 3
+//   if(1 == 3 || 1 == 3 || 1 == 3 || 2 == 3) (F)
+//   return 0

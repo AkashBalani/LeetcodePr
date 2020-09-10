@@ -12,3 +12,17 @@ class Solution {
         return res;
     }
 }
+
+/*
+    int[] intervals = [[0, 30],[5, 10],[15, 20]]
+    map = {(0, 1), (5, 1), (10, -1), (15, 1), (20, -1), (30, -1)}
+    minMeetingRooms(intervals)
+        for([15, 20] : intervals)
+            map.put(15, 1)
+                map.getOrDefault(15, 0) + 1 --> 1
+            map.put(20, 1)
+                map.getOrDefault(20, 0) + 1 --> 1
+        res = 1, cur = 0
+        for(int -1: values)
+            res = max(1, 0)
+*/

@@ -25,3 +25,27 @@ class Solution {
         return sb.toString();
     }
 }
+
+class Solution1 {
+    private StringBuilder removeInvalidCharacters(CharSequence s, char open, char close){
+        StringBuilder sb = new StringBuilder();
+        int balance = 0;
+        for(int i= 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if(c == open){
+                balance++;
+            }
+            else if(c == close){
+                if(balance == 0) continue;
+                balance--;
+            }
+            sb.append(c);
+        }
+        return sb;
+    }
+    public String minRemoveToMakeValid(String s) {
+        StringBuilder result = removeInvalidCharacters(s, '(', ')');
+        result = removeInvalidCharacters(result.reverse(), ')', '(');
+        return result.reverse().toString();
+    }
+}

@@ -113,3 +113,17 @@ public class Solution {
         return maxans;
     }
 }
+/*
+    s --> "())((())"
+    longestValidParentheses("())((())")
+        maxans = 2;
+        stack -> [2, 3]
+        for(int i = 7; i < 8; i++)
+            if(F)
+            else
+                stack.pop()
+                if(F)
+                else
+                    maxans = max(2, 4) = 4
+    return 4
+*/

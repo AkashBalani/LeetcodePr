@@ -44,3 +44,49 @@ class Solution {
                 stack --> []
     return True;
 */
+
+public class Solution1 {
+    public int longestValidParentheses(String s) {
+        int maxans = 0;
+        int dp[] = new int[s.length()];
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == ')') {
+                if (s.charAt(i - 1) == '(') {
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
+                }
+                maxans = Math.max(maxans, dp[i]);
+            }
+        }
+        return maxans;
+    }
+}
+
+/*
+    s --> "(()"
+    longestValidParentheses("(()")
+        maxans = 0;
+        int dp[] = new int[3];
+        for(int i = 2; i < 3; i++)
+            if(s.charAt(2) == ')') (T)
+                if(s.charAt(1) == '(') (T)
+                    i >= 2 ? dp[0] : 0 + 2
+                    dp[2] = 2
+            maxans = max(0, 2) = 2
+    return 2;
+
+    s --> "())((())"
+    maxans --> 2
+    longestValidParentheses("())((())")
+        maxans = 0
+        int dp = new int[8];
+        for(int i = 7; i < 8; i++)
+            if(s.charAt(7) == ')') (T)
+                if(s.charAt(6) == '(') (F)
+                i - dp[i - 1] > 0 --> 7 - 2 > 0 (T)
+                s.charAt(7 - 2 - 1) --> s.charAt(4) --> (T)
+                else if(T & T)
+                    dp[7] = 4;
+        maxans = 4
+*/

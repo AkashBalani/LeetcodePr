@@ -25,7 +25,7 @@
         }
     }
 
-    public class Solution2 extends Relation {
+    public class Solution1 extends Relation {
     
         private int numberOfPeople;
         

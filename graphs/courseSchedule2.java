@@ -32,3 +32,11 @@ class Solution{
         return (index == numCourses) ? order : new int[0];
     }
 }
+
+/*
+    numCourses = 2, prerequisites = [[1,0]], indegree[] = new int[2], order[] = new int[2], index = 0
+    findOrder(int numCourses, int[][] prerequisites) -> findOrder(2, [[1, 0]])
+        if (numCourses == 0) -> if(F)
+            for(int i = 0; i < 1; i++)
+                indegree[1]++;
+/*

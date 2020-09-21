@@ -87,3 +87,33 @@ class Solution {
         return slow;
     }
 }
+
+class Solution3 {
+    public static boolean isPalindrome(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+          fast = fast.next.next;
+          slow = slow.next;
+        }
+        slow = reverse(slow);
+        fast = head;
+        while(slow != null){
+          if(fast.val != slow.val)
+            return false;
+          slow = slow.next;
+          fast = fast.next;
+        }
+      return true;
+      }
+      public static ListNode reverse(ListNode head){
+        ListNode prev = null;
+        while(head != null){
+          ListNode next = head.next;
+          head.next = prev;
+          prev = head;
+          head = next;
+        }
+        return prev;
+      }
+}

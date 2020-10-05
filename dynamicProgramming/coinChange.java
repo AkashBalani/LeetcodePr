@@ -22,6 +22,7 @@ private int helper(int[] coins, int rem, int[] count) { // rem: remaining coins 
 public class Solution1{
     public int coinChange(int amount, int[] coins){
         int[] dp = new int[amount + 1];
+        dp[0] = 0;
         Arrays.fill(dp, amount + 1);
         for(int i = 0; i < dp.length; i++){
             for(int j = 0; j < coins.length; j++){
@@ -32,3 +33,13 @@ public class Solution1{
         return dp[amount] > amount ? -1 : dp[amount];
     }
 }
+
+/*
+    coins = [1, 2, 5], amount = 11
+    coinChange(int amount, int[] coins)
+        dp = new int[12]
+        dp -> int[]{12, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12}
+        for(int i = 1; i < dp.length; i++)
+            for(int j = 1; j < coins.length; j++)
+                if(2 <= 1)
+*/

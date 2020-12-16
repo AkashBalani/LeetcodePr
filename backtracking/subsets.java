@@ -14,3 +14,18 @@ class Solution {
         }
     }
 }
+
+/*
+    nums = [1, 2, 3]
+    tempList -> [1, 2]
+    start = 1
+    list -> [ [] , [1] , [1, 2]]
+    backtrack(list, tempList, nums, start)
+        for(int i = 0; i < 3; i++)
+            tempList.add(nums[i]) -> tempList.add(1)
+            backtrack(list, tempList, nums, 1)
+                list.add(tempList)
+                for(int i = 1; i < 3; i++)
+                    tempList.add(nums[i]) -> tempList.add(2)
+                    backtrack(list, tempList, nums, 2)
+*/

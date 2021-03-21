@@ -7,5 +7,13 @@ class Solution{
     public boolean reorderedPowerOf2(int N){
         char[] str1 = String.valueOf(N).toCharArray();
         // Makes int a char[]
+        Arrays.sort(str1);
+        for(int i = 0; i < 30; i++){
+            char[] str2 = String.valueOf(1 << i).toCharArray();
+            // This operation computes next power of two and makes a char array out of it
+            Arrays.sort(str2);
+            if(Arrays.equals(str1,str2)) return true;
+        }
+        return false;
     }
 }

@@ -1,7 +1,6 @@
-// Passed 10/12
 class Solution {
     public int smallestCommonElement(int[][] mat) {
-        // 1. Take the first array into hashmap
+        if(mat.length == 0) return -1;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         
         for(int i = 0; i < mat.length; i++){
@@ -22,6 +21,6 @@ class Solution {
                 return itr.getKey();
         }
         // 0. Return something
-        return 0;
+        return -1;
     }
 }

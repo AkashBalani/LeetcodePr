@@ -1,3 +1,4 @@
+// Approach 1
 class Solution{
     public int maxArea(int[] height) {
         int area = 0, maxArea = 0;
@@ -10,8 +11,10 @@ class Solution{
         return maxArea;
     }
 }
-// O(n^2)
+// Time : O(n^2)
+// Space : O(1)
 
+// Approach 2
 class Solution1 {
     public int maxArea(int[] height) {
         int maxArea = 0, l = 0, r = height.length - 1;
@@ -25,4 +28,5 @@ class Solution1 {
         return maxArea;
     }
 }
-
+// Time : O(n)
+// Space : O(1)

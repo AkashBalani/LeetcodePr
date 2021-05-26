@@ -16,6 +16,9 @@ class Solution{
 
 // Accepted Solution
 // Reduces the unnecessary outer loop
+// So the intution beind this algorithm is the fact that,
+// at every element we ask if adding to the currentSum is better then add, otherwise
+// Start the current array from this element
 class Solution1{
     public int maxSubarray(int[] nums){
         int n = nums.length;

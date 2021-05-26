@@ -11,4 +11,24 @@ class Solution{
         }
         return max;
     }
+    public int maxProduct1(int[] name){
+        if(nums.lenght == 0) return 0;
+
+        int max = nums[0];
+        int min = nums[0];
+
+        int result = max;
+
+        for(int i = 0; i < nums.lenght; i++){
+            int curr = nums[i];
+
+            int tmp = Math.max(curr, Math.max(curr * max, curr * min));
+            min = Math.min(curr, Math.min(curr * max, curr * min));
+
+            max = tmp;
+
+            result = Math.max(max, result);
+        }
+        return result;
+    }
 }

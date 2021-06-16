@@ -39,3 +39,10 @@ class MaxSumSubArrayOfSizeK {
         System.out.println("Maximum sum of a subarray of size K: " + MaxSumSubArrayOfSizeK.findMaxSumSubArray(2, new int[] {2, 3, 4, 1, 5}));
     }
 }
+
+/*
+
+Time Complexity of the above algorithm is O(n)
+Space Complexity of the above algorithm is O(1)
+
+*/
